@@ -57,7 +57,6 @@ function getGeneratedType(typeSchema, ignoreType=false) { // ignoreType used for
       }
       case "boolean": return "boolean";
       case "object": {
-        console.log("OBJECT")
         // Get required
         return getGeneratedType(typeSchema, true);
       }
@@ -110,11 +109,9 @@ function getGeneratedType(typeSchema, ignoreType=false) { // ignoreType used for
 
   // allOf
   else if (typeSchema.allOf !== undefined) {
-    console.log("ALLOF");
     keyType = "";
     for (const type of typeSchema.allOf) {
       var genType = getGeneratedType(type);
-      console.log(genType);
       keyType += genType +" & ";
     }
     return keyType.substring(0, keyType.length - 3);
