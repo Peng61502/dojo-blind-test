@@ -7830,7 +7830,7 @@
             },
             "icons": {
               "type": "array",
-              "items": {
+              "items": { 
                 "$ref": "#/components/schemas/ImageObject"
               },
               "description": "The category icon, in various sizes.\n"
